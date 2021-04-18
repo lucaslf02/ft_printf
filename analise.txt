@@ -1,0 +1,41 @@
+Estrutura do printf:
+
+
+%[Flags][Tamanho][Precisão][Tipo do dado]
+
+Flags:
+O padrão quando não passar nenhuma flag é sair com o preenchimento em branco.
+
+flag [-]: Ajusta a saída à esquerda
+flag [0]: preenchimento com 0
+
+** SE for utilizado [-] junto com [0], [-] substitui [0]
+
+Tamanho:
+-> Uma sequencia e digitos opcional pode ser utilizados para definir o Tamanho
+-> Se a string de saída tiver menos bytes do que a largura do campo, ela terá preenchimento
+em branco à esquerda (padrão) do valor para compensar a largura do campo.
+Ex: printf("Teste %5s;","abc");
+saida - Teste   abc;
+-> Se no lugar do numero for utilizado o caracter '*' siginificad que o tamanho será definido por uma
+variavel passada por parameto subsequente a strig a ser formatada.
+
+Precisão:
+-> Ponto opcional, '.', Seguido por uma string de dígitos opcional especificando o 
+número máximo de bytes a serem impressos de uma string.
+Para especificadores de inteiros (d, i, o, u, x, X) - a precisão especifica o número mínimo de 
+dígitos a serem escritos. Se o valor a ser escrito for menor que esse número, o resultado será 
+preenchido com zeros à esquerda. O valor não é truncado, mesmo se o resultado for mais longo. 
+Uma precisão de 0 significa que nenhum caractere é escrito para o valor 0. 
+Para especificadores e, E e f - este é o número de dígitos a serem impressos após o ponto decimal. 
+Para especificadores ge G - Este é o número máximo de dígitos significativos a serem impressos. 
+Para s - este é o número máximo de caracteres a serem impressos. 
+Por padrão, todos os caracteres são impressos até que o caractere nulo final seja encontrado. 
+Para tipo c - não tem efeito. Quando nenhuma precisão é especificada, o padrão é 1. 
+Se o período for especificado sem um valor explícito para a precisão, 0 é assumido.
+-> Se a string de dígitos estiver faltando, a precisão é tratada como zero. (. == .0)
+-> Se no lugar do numero for utilizado o caracter '*' siginificad que a precisão será definido por uma
+variavel passada por parameto subsequente a strig a ser formatada.
+-> Valores negativos são tratados como sem precisão
+-> O tipo char e o tipo de ponteiro não exigem precisão.
+

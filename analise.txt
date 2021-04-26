@@ -39,3 +39,21 @@ variavel passada por parameto subsequente a strig a ser formatada.
 -> Valores negativos são tratados como sem precisão
 -> O tipo char e o tipo de ponteiro não exigem precisão.
 
+
+Algoritimo:
+
+1 - Laço de repetição para ler cada caractere da função format
+  1.1 - Se o caractere for igual a "%" então:
+      -> Ler Flags
+      -> Ler Width
+      -> Ler Precision
+      -> Ler Lenght
+      -> Ler Specifier
+  1.2 - Senão Escrever caractere
+  1.3 - incrementar laço
+  
+  
+
+
+
+

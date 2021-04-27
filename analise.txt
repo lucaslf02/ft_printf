@@ -39,3 +39,5 @@ variavel passada por parameto subsequente a strig a ser formatada.
 -> Valores negativos são tratados como sem precisão
 -> O tipo char e o tipo de ponteiro não exigem precisão.
 
+**Aplique a precisão primeiro e depois compare com a largura.
+

@@ -41,3 +41,37 @@ variavel passada por parameto subsequente a strig a ser formatada.
 
 **Aplique a precisão primeiro e depois compare com a largura.
 
+Algoritimo:
+
+1 - Laço de repetição para ler cada caractere da função format
+  1.1 - Se o caractere for igual a "%" então:
+      -> Ler Flags
+      -> Ler Width
+      -> Ler Precision
+      -> Ler Lenght
+      -> Ler Specifier
+  1.2 - Senão Escrever caractere
+2 - incrementar laço
+  
+
+Requisitos mandatórios:
+1 - Flags
+  - (-)
+  - (0)
+2 - Width
+  - Ler espaçamentos passados fixados e passados com variação utilizado o wildcard (*)
+3 - Precision
+  - Ler precisão passados fixados apos o caractere (.) e passados com variação utilizado o wildcard (.*)
+4 - Specifier
+  - Ler os especificadores
+    - c : Char
+    - s : String
+    - p : Pointer address
+    - d : Signed decimal integer
+    - i : Signed decimal integer
+    - u : Unsigned decimal integer
+    - x : Unsigned hexadecimal integer
+    - X : Unsigned hexadecimal integer (uppercase)
+    - % : Caractere %
+ 
+

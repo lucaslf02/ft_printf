@@ -15,8 +15,18 @@
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
+	char aux_format;
 
+	aux_format = format;
 	va_start(args, format);
+	while (aux_format != '\0')
+	{
+    if (aux_format == '%')
+			ft_format(&aux_format);
+		else
+			putchar(aux_format);
+		aux_format++;
+	}	
 	va_end(args);
 	return (1);
 }

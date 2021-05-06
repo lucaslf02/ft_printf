@@ -19,6 +19,10 @@
 #  define SPEC "cspdiuxX%"
 # endif
 
+# ifndef FLAGS
+#  define FLAGS "-0.*"
+# endif
+
 
 typedef  struct print_flags
 {

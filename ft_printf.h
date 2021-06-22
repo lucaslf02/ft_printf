@@ -15,6 +15,27 @@
 #ifdef FT_PRINTF_H
 # define FT_PRINTF_H
 
+# ifndef SPEC
+#  define SPEC "cspdiuxX%"
+# endif
+
+# ifndef FLAGS
+#  define FLAGS "-0.*"
+# endif
+
+
+typedef  struct print_flags
+{
+	char spec;
+	bool dot;
+	bool zero;
+	bool dash;
+	int len;	
+	int width;
+	int precision;
+
+} print_flags_t;
+
 int	ft_printf(const char *format, ...);
 
 #endif

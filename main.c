@@ -3,58 +3,117 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 21:43:15 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/04/18 15:20:02 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/10/30 11:13:48 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_printf.h"
-// #include "libft/libft.h"
+#include "./code/ft_printf.h"
 #include "stdio.h"
 
 int	main(void)
 {
-	// char test_char = 'A';
-	// char *test_string = "LUCAS";
-	// int test_int = 42;
-	// float test_float = 42.21;
-	// long int test_long_int = 2147483647;
-	// unsigned int test_usig_int = 42;
+	char test_char = 'A';
+	int len = 0;
+	int lenft = 0;
+	char *test_string = "LUCAS";
+	int test_int = -42;
+	long int test_long_int = 2147483647;
+	unsigned int test_usig_int = -42;
+	unsigned int test_using_hex = -42;
 
-	// /*Apenas texto*/
-	// printf("Apenas texto\n"); 
-	// printf("Printf:\t\t\tApenas texto\n"); 
-	// // ft_printf("ft_printf: Apenas texto\n");
-	// printf("\n");
-	// /*Teste Char*/
-	// printf("Teste Char\n");
-	// printf("Printf:%c .\n",test_char); 
+	/*Apenas texto*/
+	printf("Apenas texto\n"); 
+	
+	printf("Printf: \n"); 
+	len = printf("Printf:\t   Apenas texto\n"); 
+
+	printf("ft_printf: \n"); 
+	lenft = ft_printf("Printf:\t   Apenas texto\n");
+	
+	printf("len printf: %d\n", len); 
+	printf("len ft_printf: %d\n", lenft);
+	len = 0, lenft = 0; 	
+	printf("\n");
+
+	/*Teste %*/
+	printf("Teste %% \n"); 
+	
+	printf("Printf: \n"); 
+	len = printf("Printf:%% \n"); 
+
+	printf("ft_printf: \n"); 
+	lenft = ft_printf("Printf:%% \n");
+	
+	printf("len printf: %d\n", len); 
+	printf("len ft_printf: %d\n", lenft);
+	len = 0, lenft = 0; 	
+	printf("\n");
+
+	/*Teste Char*/
+	printf("Teste Char\n");
+	
+	printf("Printf: \n"); 
+	len = printf("Printf:%c .\n",test_char); 
 	// printf("Printf:%9c .\n",test_char); 
-	// // ft_printf("ft_printf: %c\n",test_char);
-	// printf("\n");
-	// /*Teste String*/
-	// printf("Teste String\n");
-	// printf("Printf:%s .\n",test_string);
+	
+	printf("ft_printf: \n"); 
+	lenft = ft_printf("Printf:%c .\n",test_char);
+	
+	printf("len printf: %d\n", len); 
+	printf("len ft_printf: %d\n", lenft);
+	len = 0, lenft = 0; 
+	
+	printf("\n");
+	/*Teste String*/
+	printf("Teste String\n");
+	
+	printf("Printft\n");
+	len = printf("Printf:%s .\n",test_string);
 	// printf("Printf:%9s .\n",test_string); 
-	// // ft_printf("ft_printf: %s\n",test_string);
-	// printf("\n");
-	// /*Teste INT*/
-	// printf("Teste INT\n");
-	// printf("Usando d\n");
-	// printf("Printf:%05d .\n",test_int); 
-	// // // ft_printf("ft_printf: %d\n",test_int);
-	// // printf("Usando i\n");
-	// // printf("Printf:\t\t\t%i\n",test_int); 
-	// // ft_printf("ft_printf: %i\n",test_int);
-	// // printf("\n");
-	// // /*Teste Float*/
-	// // printf("Teste Float\n");
-	// // printf("Printf:\t\t\t%f\n",test_float); 
-	// // // ft_printf("ft_printf: %f\n",test_float);
-	// // printf("\n");
-	// // /*Teste LONG INT*/
+	
+	printf("ft_printf\n");
+	lenft = ft_printf("Printf:%s .\n",test_string);
+	
+	printf("len printf: %d\n", len); 
+	printf("len ft_printf: %d\n", lenft);
+	len = 0, lenft = 0; 	
+
+	/*Teste INT*/
+	printf("Teste INT\n");
+	printf("Usando d\n");
+
+	printf("Printf\n");
+	len = printf("Printf:%d .\n",test_int); 
+	
+	printf("ft_printf\n");
+	lenft = ft_printf("Printf:%d .\n",test_int);
+	
+	printf("len printf: %d\n", len); 
+	printf("len ft_printf: %d\n", lenft);
+	len = 0, lenft = 0; 	
+	
+	printf("Usando i\n");
+	
+	printf("Printf\n");
+	len = printf("Printf:%i .\n",test_int); 
+	
+	printf("ft_printf\n");
+	lenft = ft_printf("Printf:%i .\n",test_int);
+	
+	printf("len printf: %d\n", len); 
+	printf("len ft_printf: %d\n", lenft);
+	len = 0, lenft = 0; 	
+	
+	printf("\n");
+	/*Teste Float*/
+	// printf("Teste Float\n");
+	// printf("Printf:%f .\n",test_float); 
+	// ft_printf("ft_printf:%f .\n",test_float);
+	//printf("\n");
+	/*Teste LONG INT*/
 	// // printf("Teste LONG INT\n");
 	// // printf("Usando ld\n");
 	// // printf("Printf:\t\t\t%ld\n",test_long_int); 
@@ -62,16 +121,61 @@ int	main(void)
 	// // printf("Usando li\n");
 	// // printf("Printf:\t\t\t%li\n",test_long_int); 
 	// // // ft_printf("ft_printf: %li\n",test_long_int);
-	// // printf("\n");
-	// // /*Teste UNSIGNED INT*/
-	// // printf("Teste UNSIGNED INT\n");
-	// // printf("Usando ud\n");
-	// // printf("Printf:\t\t\t%ud\n",test_usig_int); 
-	// // // ft_printf("ft_printf: %ud\n",test_usig_int);
-	// // printf("Usando ui\n");
-	// // printf("Printf:\t\t\t%ui\n",test_usig_int); 
-	// // // ft_printf("ft_printf: %ui\n",test_usig_int);
-	// // printf("\n");
+	// printf("\n");
+	/*Teste UNSIGNED INT*/
+	printf("Teste UNSIGNED INT\n");
 	
+	printf("Printf\n");
+	len = printf("Printf:%u .\n",test_usig_int); 
+	
+	printf("ft_printf\n");
+	lenft = ft_printf("Printf:%u .\n",test_usig_int);	
+	
+	printf("len printf: %d\n", len); 
+	printf("len ft_printf: %d\n", lenft);
+	len = 0, lenft = 0; 	
+
+	/*Teste HEX*/
+	printf("Teste HEX\n");
+	printf("Usando x\n");
+
+	printf("Printf\n");
+	len = printf("Printf:%x .\n",test_using_hex); 
+	
+	printf("ft_printf\n");
+	lenft = ft_printf("Printf:%x .\n",test_using_hex);	
+	
+	printf("len printf: %d\n", len); 
+	printf("len ft_printf: %d\n", lenft);
+	len = 0, lenft = 0; 
+	printf("\n");
+
+	printf("Usando X\n");
+
+	printf("printf\n");
+	len = printf("Printf:%X .\n",test_using_hex); 
+	
+	printf("ft_printf\n");
+	lenft = ft_printf("Printf:%X .\n",test_using_hex);	
+	
+	printf("len printf: %d\n", len); 
+	printf("len ft_printf: %d\n", lenft);
+	len = 0, lenft = 0; 
+	printf("\n");
+	
+	/*Teste POINTER*/
+	printf("Teste Pointer\n");
+
+	printf("Printf\n");
+	printf("Printf:%p .\n",&test_using_hex); 
+	len = printf("Printf:%p .\n",&test_using_hex); 
+	
+	printf("ft_printf\n");
+	lenft = ft_printf("Printf:%p .\n",&test_using_hex);	
+	
+	printf("len printf: %d\n", len); 
+	printf("len ft_printf: %d\n", lenft);
+	len = 0, lenft = 0; 
+	printf("\n");
 	return (0);
 }

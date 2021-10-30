@@ -6,7 +6,7 @@
 /*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 10:48:47 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/10/30 14:46:49 by lucas            ###   ########.fr       */
+/*   Updated: 2021/10/30 15:07:08 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ size_t	ft_printf(const char *format, ...)
 			len += ft_putchar(aux_format[i]);
 		i++;
 	}	
+	free(aux_format);
 	va_end(args);
 	return (len);
 }

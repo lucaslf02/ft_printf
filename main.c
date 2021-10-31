@@ -6,7 +6,7 @@
 /*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 21:43:15 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/10/30 11:13:48 by lucas            ###   ########.fr       */
+/*   Updated: 2021/10/31 20:32:28 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,5 +177,33 @@ int	main(void)
 	printf("len ft_printf: %d\n", lenft);
 	len = 0, lenft = 0; 
 	printf("\n");
-	return (0);
+
+	/*Teste MIX*/
+	printf("Teste MIX\n");
+
+	printf("Printf\n");
+	len = printf("Printf:O aluno %s, estuda na escola %d, e alocou memoria no endereco %p.\n",test_string, test_int, &test_int); 
+	
+	printf("ft_printf\n");
+	lenft = ft_printf("Printf:O aluno %s, estuda na escola %d, e alocou memoria no endereco %p.\n",test_string, test_int, &test_int);
+	
+	printf("len printf: %d\n", len); 
+	printf("len ft_printf: %d\n", lenft);
+	len = 0, lenft = 0; 
+	printf("\n");	
+
+	/*Teste NULL S*/
+	printf("Teste NULL S\n");
+
+	// printf("Printf\n");
+	// len = printf(" NULL %s NULL ", NULL); 
+	
+	printf("ft_printf\n");
+	lenft = ft_printf(" NULL %s NULL ", NULL);
+	
+	printf("len printf: %d\n", len); 
+	printf("len ft_printf: %d\n", lenft);
+	len = 0, lenft = 0; 
+	printf("\n");
+	return (0);	
 }

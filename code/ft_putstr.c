@@ -6,7 +6,7 @@
 /*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 21:26:03 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/10/31 20:51:02 by lucas            ###   ########.fr       */
+/*   Updated: 2021/10/31 20:52:27 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_putstr(char *s)
 	int	len;
 
 	len = 0;
-	if (s == NULL || !*s)
+	if (!s)
 		s = "(null)";
 	while (*s)
 		len += ft_putchar(*s++);

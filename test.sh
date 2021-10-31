@@ -1,5 +1,5 @@
 #!/bin/bash
-
+clean
 cd ./code
 make fclean
 make

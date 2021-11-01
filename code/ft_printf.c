@@ -6,7 +6,7 @@
 /*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 10:48:47 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/10/31 21:06:05 by lucas            ###   ########.fr       */
+/*   Updated: 2021/10/31 21:07:25 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ size_t print_p(unsigned long pNbr)
 	len = 0;
 	if (pNbr == 0)
 	{
-		len = ft_putstr("(nil)");
+		len = ft_putstr("0x");
+		len += ft_putstr("0");
 		return (len);
 	}	
 	len = ft_putstr("0x");

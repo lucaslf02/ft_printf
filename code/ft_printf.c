@@ -6,13 +6,14 @@
 /*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 10:48:47 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/10/31 21:07:25 by lucas            ###   ########.fr       */
+/*   Updated: 2021/10/31 21:14:22 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t print_p(unsigned long pNbr);
+size_t	print_p(unsigned long pNbr);
+size_t	print_d_u(int nbr);
 
 size_t	ft_printf(const char *format, ...)
 {
@@ -41,7 +42,7 @@ size_t	ft_printf(const char *format, ...)
 size_t	ft_format(char conversion, va_list args)
 {
 	int	len;
-
+	
 	len = 0;
 	if (conversion == '%')
 		len = ft_putchar('%');
@@ -52,13 +53,25 @@ size_t	ft_format(char conversion, va_list args)
 	else if (conversion == 'p')
 		len = print_p((va_arg(args, unsigned long)));
 	else if (conversion == 'd' || conversion == 'i')
-		len = ft_putstr(ft_itoa((va_arg(args, int))));
+		len = print_d_u((va_arg(args, int)));		
 	else if (conversion == 'u')
 		len = ft_putnbr((va_arg(args, unsigned)));
 	else if (conversion == 'x')
 		len = ft_putnbr_base((va_arg(args, unsigned long)), HEX_BASE_LOWER);
 	else if (conversion == 'X')
 		len = ft_putnbr_base((va_arg(args, unsigned long)), HEX_BASE_UPPER);
+	return (len);
+}
+
+size_t print_d_u(int nbr)
+{
+	size_t	len;
+	char	*s;
+
+	len = 0;
+	s = ft_itoa(nbr);
+	len = ft_putstr(s);
+	free(s);
 	return (len);
 }
 

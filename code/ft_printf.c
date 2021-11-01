@@ -6,11 +6,13 @@
 /*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 10:48:47 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/10/30 15:07:08 by lucas            ###   ########.fr       */
+/*   Updated: 2021/10/31 21:06:05 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+size_t print_p(unsigned long pNbr);
 
 size_t	ft_printf(const char *format, ...)
 {
@@ -48,10 +50,7 @@ size_t	ft_format(char conversion, va_list args)
 	else if (conversion == 's')
 		len = ft_putstr((va_arg(args, char *)));
 	else if (conversion == 'p')
-	{
-		len = ft_putstr("0x");
-		len += ft_putnbr_base((va_arg(args, unsigned long)), HEX_BASE_LOWER);
-	}
+		len = print_p((va_arg(args, unsigned long)));
 	else if (conversion == 'd' || conversion == 'i')
 		len = ft_putstr(ft_itoa((va_arg(args, int))));
 	else if (conversion == 'u')
@@ -60,5 +59,20 @@ size_t	ft_format(char conversion, va_list args)
 		len = ft_putnbr_base((va_arg(args, unsigned long)), HEX_BASE_LOWER);
 	else if (conversion == 'X')
 		len = ft_putnbr_base((va_arg(args, unsigned long)), HEX_BASE_UPPER);
+	return (len);
+}
+
+size_t print_p(unsigned long pNbr)
+{
+	size_t len;
+	
+	len = 0;
+	if (pNbr == 0)
+	{
+		len = ft_putstr("(nil)");
+		return (len);
+	}	
+	len = ft_putstr("0x");
+	len += ft_putnbr_base(pNbr, HEX_BASE_LOWER);
 	return (len);
 }

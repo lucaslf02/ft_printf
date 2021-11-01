@@ -6,7 +6,7 @@
 /*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 21:43:15 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/10/31 20:43:39 by lucas            ###   ########.fr       */
+/*   Updated: 2021/10/31 20:55:27 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,5 +205,20 @@ int	main(void)
 	printf("len ft_printf: %d\n", lenft);
 	len = 0, lenft = 0; 
 	printf("\n");
+
+		/*Teste P 0*/
+	printf("Teste Pointer 0\n");
+
+	printf("Printf\n");
+	len = printf(" %p %p ", 0, 0); 
+	
+	printf("ft_printf\n");
+	lenft = ft_printf(" %p %p ", 0, 0);
+	
+	printf("len printf: %d\n", len); 
+	printf("len ft_printf: %d\n", lenft);
+	len = 0, lenft = 0; 
+	printf("\n");	
 	return (0);	
+
 }

@@ -6,7 +6,7 @@
 /*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 10:48:47 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/11/02 17:12:32 by lucas            ###   ########.fr       */
+/*   Updated: 2021/11/02 17:18:17 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ size_t	ft_format(char conversion, va_list args)
 	else if (conversion == 'u')
 		len = ft_putnbr((va_arg(args, unsigned)));
 	else if (conversion == 'x')
-		len = print_h((va_arg(args, unsigned long)), HEX_BASE_LOWER);
+		len = print_h((va_arg(args, unsigned int)), HEX_BASE_LOWER);
 	else if (conversion == 'X')
-		len = print_h((va_arg(args, unsigned long)), HEX_BASE_UPPER);
+		len = print_h((va_arg(args, unsigned int)), HEX_BASE_UPPER);
 	return (len);
 }
 

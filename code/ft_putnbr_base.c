@@ -6,13 +6,13 @@
 /*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 21:37:54 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/10/30 14:34:39 by lucas            ###   ########.fr       */
+/*   Updated: 2021/11/02 17:16:28 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_putnbr_base(long long nbr, char *base)
+size_t	ft_putnbr_base(unsigned long long nbr, char *base)
 {
 	unsigned long long	aux_nbr;
 	unsigned long long	nbr_final[100];

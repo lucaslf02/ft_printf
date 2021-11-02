@@ -6,7 +6,7 @@
 /*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 14:41:11 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/10/30 14:47:04 by lucas            ###   ########.fr       */
+/*   Updated: 2021/11/02 17:16:46 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_itoa(int n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);
 char	*ft_strrchr(const char *s, int c);
-size_t	ft_putnbr_base(long long nbr, char *base);
+size_t	ft_putnbr_base(unsigned long long nbr, char *base);
 size_t	ft_putstr(char *s);
 int		ft_isdigit(int c);
 size_t	ft_putnbr(unsigned int nb);

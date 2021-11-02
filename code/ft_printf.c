@@ -6,14 +6,15 @@
 /*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 10:48:47 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/10/31 21:14:22 by lucas            ###   ########.fr       */
+/*   Updated: 2021/11/02 17:12:32 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 size_t	print_p(unsigned long pNbr);
-size_t	print_d_u(int nbr);
+size_t	print_d_i(int nbr);
+size_t	print_h(unsigned long pNbr, char *base);
 
 size_t	ft_printf(const char *format, ...)
 {
@@ -53,17 +54,17 @@ size_t	ft_format(char conversion, va_list args)
 	else if (conversion == 'p')
 		len = print_p((va_arg(args, unsigned long)));
 	else if (conversion == 'd' || conversion == 'i')
-		len = print_d_u((va_arg(args, int)));		
+		len = print_d_i((va_arg(args, int)));		
 	else if (conversion == 'u')
 		len = ft_putnbr((va_arg(args, unsigned)));
 	else if (conversion == 'x')
-		len = ft_putnbr_base((va_arg(args, unsigned long)), HEX_BASE_LOWER);
+		len = print_h((va_arg(args, unsigned long)), HEX_BASE_LOWER);
 	else if (conversion == 'X')
-		len = ft_putnbr_base((va_arg(args, unsigned long)), HEX_BASE_UPPER);
+		len = print_h((va_arg(args, unsigned long)), HEX_BASE_UPPER);
 	return (len);
 }
 
-size_t print_d_u(int nbr)
+size_t	print_d_i(int nbr)
 {
 	size_t	len;
 	char	*s;
@@ -75,7 +76,7 @@ size_t print_d_u(int nbr)
 	return (len);
 }
 
-size_t print_p(unsigned long pNbr)
+size_t	print_p(unsigned long pNbr)
 {
 	size_t len;
 	
@@ -88,5 +89,19 @@ size_t print_p(unsigned long pNbr)
 	}	
 	len = ft_putstr("0x");
 	len += ft_putnbr_base(pNbr, HEX_BASE_LOWER);
+	return (len);
+}
+
+size_t	print_h(unsigned long pNbr, char *base)
+{
+	size_t len;
+	
+	len = 0;
+	if (pNbr == 0)
+	{
+		len += ft_putstr("0");
+		return (len);
+	}	
+	len += ft_putnbr_base(pNbr, base);
 	return (len);
 }
